@@ -48,15 +48,15 @@ Cette application permet aux utilisateurs de :
 
 ## 📦 Installation
 
-1. 📥 Téléchargez l’APK depuis la section [Releases](#)
-2. 📲 Installez l’application sur votre appareil Android
-3. 🚀 Lancez l’application et commencez à explorer les modules
+1. 📥 Téléchargez l'APK depuis la section [Releases](#)
+2. 📲 Installez l'application sur votre appareil Android
+3. 🚀 Lancez l'application et commencez à explorer les modules
 
 ---
 
 ## 🔑 Compte Démo
 
-Pour tester rapidement l’application, vous pouvez utiliser ce compte administrateur par défaut :
+Pour tester rapidement l'application, vous pouvez utiliser ce compte administrateur par défaut :
 
 - **Email** : `admin@example.com`
 - **Mot de passe** : `admin123`
