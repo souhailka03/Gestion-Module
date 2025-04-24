@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/moduleListFragment">
+
+    <fragment
+        android:id="@+id/moduleListFragment"
+        android:name="com.ests.gestionmodules.ui.fragment.ModuleListFragment"
+        android:label="@string/module_list">
+        <action
+            android:id="@+id/action_moduleList_to_addModule"
+            app:destination="@id/addModuleFragment" />
+        <action
+            android:id="@+id/action_moduleList_to_editModule"
+            app:destination="@id/editModuleFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addModuleFragment"
+        android:name="com.ests.gestionmodules.ui.fragment.AddModuleFragment"
+        android:label="@string/add_module">
+        <action
+            android:id="@+id/action_addModule_to_moduleList"
+            app:destination="@id/moduleListFragment"
+            app:popUpTo="@id/moduleListFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/editModuleFragment"
+        android:name="com.ests.gestionmodules.ui.fragment.EditModuleFragment"
+        android:label="@string/edit_module">
+        <argument
+            android:name="moduleId"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_editModule_to_moduleList"
+            app:destination="@id/moduleListFragment"
+            app:popUpTo="@id/moduleListFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.ests.gestionmodules.ui.fragment.ProfileFragment"
+        android:label="@string/profile" />
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.ests.gestionmodules.ui.fragment.SettingsFragment"
+        android:label="@string/settings" />
+
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="com.ests.gestionmodules.ui.fragment.FavoritesFragment"
+        android:label="@string/favorites" />
+</navigation> 

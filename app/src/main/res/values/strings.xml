@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Gestion Modules</string>
+    
+    <!-- Navigation -->
+    <string name="module_list">Liste des modules</string>
+    <string name="add_module">Ajouter un module</string>
+    <string name="edit_module">Modifier le module</string>
+    <string name="profile">Profil</string>
+    <string name="settings">Parametres</string>
+    <string name="favorites">Favoris</string>
+    
+    <!-- Forms -->
+    <string name="module_title">Titre du module</string>
+    <string name="module_description">Description</string>
+    <string name="resource_url">URL de la ressource</string>
+    <string name="select_file">Selectionner un fichier</string>
+    <string name="save_module">Enregistrer le module</string>
+    <string name="update_module">Mettre a jour le module</string>
+    <string name="delete_module">Supprimer le module</string>
+    
+    <!-- Profile -->
+    <string name="user_name">Nom d\'utilisateur</string>
+    <string name="email">Email</string>
+    <string name="save_changes">Enregistrer les modifications</string>
+    
+    <!-- Settings -->
+    <string name="dark_theme">Theme sombre</string>
+    <string name="notifications">Notifications</string>
+    
+    <string name="error_name_required">Le nom est requis</string>
+    <string name="error_email_required">L\'email est requis</string>
+    <string name="profile_updated">Profil mis a jour</string>
+    
+    <!-- Login -->
+    <string name="error_password_required">Le mot de passe est requis</string>
+    <string name="error_invalid_credentials">Email ou mot de passe incorrect</string>
+    <string name="password">Mot de passe</string>
+    <string name="login">Connexion</string>
+    
+    <!-- Buttons -->
+    <string name="cancel">Annuler</string>
+    <string name="confirm">Confirmer</string>
+    <string name="ok">OK</string>
+</resources>
