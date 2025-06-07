@@ -1,71 +1,88 @@
-# 📚 Gestion des Modules
+# 📚 Module Management System
 
-**Une application Android intuitive pour la gestion des modules d'enseignement.**
+**An intuitive Android application for managing educational modules and learning resources.**
 
 ---
 
 ## 📝 Description
 
-Cette application permet aux utilisateurs de :
+This application enables users to:
 
-- ✅ Créer un compte et se connecter
-- 📘 Consulter la liste des modules disponibles
-- ⬇️ Télécharger et gérer leurs modules
-- 📊 Suivre leur progression d'apprentissage
-
----
-
-## 🚀 Fonctionnalités
-
-### 🔐 Authentification
-
-- Création de compte via email et mot de passe
-- Connexion sécurisée avec gestion de session
-- Validation des champs et retours utilisateurs
-
-### 📚 Gestion des Modules
-
-- Affichage de tous les modules disponibles
-- Accès aux détails de chaque module
-- Téléchargement de contenu pour une utilisation hors ligne
-- Suivi de progression personnel
-
-### 🎨 Interface Utilisateur
-
-- UI moderne basée sur **Material Design**
-- Navigation fluide et intuitive
-- Prise en charge du multilingue : 🇫🇷 Français / 🇬🇧 Anglais
+- ✅ Create an account and securely log in
+- 📘 Browse available educational modules
+- ⬇️ Download and manage learning materials
+- 📊 Track learning progress
+- 🔒 Secure authentication system
+- 📱 Modern Material Design interface
 
 ---
 
-## 📱 Configuration Requise
+## 🚀 Features
 
-- Android **5.0 (API level 21)** ou supérieur
-- Connexion Internet (pour le téléchargement)
-- Espace de stockage disponible pour les fichiers
+### 🔐 Authentication
+
+- Email-based registration and login
+- Secure session management
+- Input validation and user feedback
+- Password security requirements
+
+### 📚 Module Management
+
+- View all available modules
+- Access detailed module information
+- Download content for offline use
+- Track personal progress
+- Organize learning materials
+
+### 🎨 User Interface
+
+- Modern Material Design components
+- Intuitive navigation
+- Responsive layout
+- User-friendly forms
+- Progress indicators
+
+---
+
+## 📱 Requirements
+
+- Android 5.0 (API level 21) or higher
+- Internet connection (for downloads)
+- Available storage space for files
 
 ---
 
 ## 📦 Installation
 
-1. 📥 Téléchargez l'APK depuis la section [Releases](#)
-2. 📲 Installez l'application sur votre appareil Android
-3. 🚀 Lancez l'application et commencez à explorer les modules
+1. 📥 Download the APK from the [Releases](#) section
+2. 📲 Install the application on your Android device
+3. 🚀 Launch the app and start exploring modules
 
 ---
 
-## 🔑 Compte Démo
+## 🔑 Demo Account
 
-Pour tester rapidement l'application, vous pouvez utiliser ce compte administrateur par défaut :
+To quickly test the application, you can use the default admin account:
 
-- **Email** : `admin@example.com`
-- **Mot de passe** : `admin123`
+- **Email**: `admin@example.com`
+- **Password**: `admin123`
 
 ---
 
-## 🗂️ Structure du Projet
+## 🛠️ Technical Stack
 
-```bash
+- **Language**: Java
+- **Database**: Room Database
+- **UI Framework**: Material Design
+- **Architecture**: MVVM
+- **Background Processing**: ExecutorService
+- **Data Persistence**: SharedPreferences
+
+---
+
+## 🗂️ Project Structure
+
+```
 app/
 ├── src/
 │   ├── main/
@@ -77,37 +94,41 @@ app/
 │   │   │   ├── LoginActivity.java
 │   │   │   ├── RegisterActivity.java
 │   │   │   └── ModuleListActivity.java
-│   │   └── res/
-│   │       ├── layout/
-│   │       ├── values/
-│   │       └── values-en/
+│   │   ├── res/
+│   │   │   ├── layout/
+│   │   │   ├── values/
+│   │   │   └── drawable/
+│   │   └── AndroidManifest.xml
+│   └── test/
 └── build.gradle
 ```
 
 ---
 
-## 🛠️ Technologies Utilisées
+## 🤝 Contributing
 
-- **Android SDK**
-- **Room Database**
-- **Material Design Components**
-- **AndroidX**
-- **Kotlin Coroutines**
-
----
-
-## 🤝 Contribution
-
-Les contributions sont les bienvenues ! Pour participer :
-
-1. 🍴 Forkez le projet
-2. 🌿 Créez une nouvelle branche (`feature/ma-fonctionnalité`)
-3. 💾 Commitez vos modifications
-4. 📤 Poussez votre branche
-5. 🛠️ Ouvrez une **Pull Request**
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ---
 
-## 📄 Licence
+## 📄 License
 
-Ce projet est sous licence **MIT**. Consultez le fichier [`LICENSE`](./LICENSE) pour plus de détails.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 👥 Authors
+
+- **Souhail Ka** - *Initial work* - [souhailka03](https://github.com/souhailka03)
+
+---
+
+## 🙏 Acknowledgments
+
+- Material Design Components
+- Android Room Database
+- AndroidX Libraries
