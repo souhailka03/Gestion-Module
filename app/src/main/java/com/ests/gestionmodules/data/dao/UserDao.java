@@ -4,6 +4,7 @@ import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
 import com.ests.gestionmodules.data.entity.User;
+import java.util.List;
 
 @Dao
 public interface UserDao {
@@ -15,4 +16,7 @@ public interface UserDao {
 
     @Query("SELECT COUNT(*) FROM users WHERE email = :email")
     int checkEmailExists(String email);
+
+    @Query("SELECT * FROM users")
+    List<User> getAllUsers();
 } 

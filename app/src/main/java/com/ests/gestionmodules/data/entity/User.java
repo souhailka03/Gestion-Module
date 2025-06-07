@@ -60,10 +60,13 @@ public class User {
         if (password.length() < 6) {
             throw new IllegalArgumentException("Le mot de passe doit contenir au moins 6 caractères");
         }
-        this.password = password;
+        this.password = password.trim();
     }
 
     public boolean checkPassword(String inputPassword) {
-        return this.password.equals(inputPassword);
+        if (inputPassword == null) {
+            return false;
+        }
+        return this.password.equals(inputPassword.trim());
     }
 } 

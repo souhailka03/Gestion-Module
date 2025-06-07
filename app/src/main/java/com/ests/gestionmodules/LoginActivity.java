@@ -10,6 +10,7 @@ import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.ests.gestionmodules.data.AppDatabase;
 import com.ests.gestionmodules.data.entity.User;
+import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -28,17 +29,8 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        // Vérifier si c'est la première exécution
-        SharedPreferences prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
-        if (prefs.getBoolean(KEY_FIRST_RUN, true)) {
-            // Réinitialiser la base de données
-            AppDatabase.destroyInstance();
-            db = AppDatabase.getDatabase(this);
-            prefs.edit().putBoolean(KEY_FIRST_RUN, false).apply();
-        } else {
-            db = AppDatabase.getDatabase(this);
-        }
-
+        // Initialize database without reset
+        db = AppDatabase.getDatabase(this);
         executorService = Executors.newSingleThreadExecutor();
 
         emailInput = findViewById(R.id.emailInput);
@@ -49,7 +41,7 @@ public class LoginActivity extends AppCompatActivity {
         loginButton.setOnClickListener(v -> attemptLogin());
         registerButton.setOnClickListener(v -> startActivity(new Intent(this, RegisterActivity.class)));
 
-        // Créer l'utilisateur admin par défaut
+        // Create default admin only if it doesn't exist
         createDefaultAdmin();
     }
 
@@ -66,7 +58,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void attemptLogin() {
-        String email = String.valueOf(emailInput.getText());
+        String email = String.valueOf(emailInput.getText()).trim();
         String password = String.valueOf(passwordInput.getText());
 
         if (email.isEmpty() || password.isEmpty()) {
@@ -74,16 +66,31 @@ public class LoginActivity extends AppCompatActivity {
             return;
         }
 
-        Log.d(TAG, "Tentative de connexion pour l'email: " + email);
+        Log.d(TAG, "=== Début de la tentative de connexion ===");
+        Log.d(TAG, "Email saisi: [" + email + "]");
+        Log.d(TAG, "Longueur du mot de passe saisi: " + password.length());
 
         executorService.execute(() -> {
+            // Vérifier tous les utilisateurs dans la base de données
+            List<User> allUsers = db.userDao().getAllUsers();
+            Log.d(TAG, "Nombre total d'utilisateurs dans la base: " + allUsers.size());
+            for (User u : allUsers) {
+                Log.d(TAG, "Utilisateur trouvé - Email: [" + u.getEmail() + "], ID: " + u.getId());
+            }
+
             User user = db.userDao().getUserByEmail(email);
+            Log.d(TAG, "Recherche de l'utilisateur avec l'email: [" + email + "]");
             Log.d(TAG, "Utilisateur trouvé: " + (user != null));
             
             if (user != null) {
-                Log.d(TAG, "Hash du mot de passe stocké: " + user.getPassword());
+                Log.d(TAG, "Email trouvé dans la base de données");
+                Log.d(TAG, "ID de l'utilisateur: " + user.getId());
+                Log.d(TAG, "Mot de passe stocké (longueur): " + user.getPassword().length());
+                Log.d(TAG, "Mot de passe saisi (longueur): " + password.length());
                 boolean passwordMatch = user.checkPassword(password);
                 Log.d(TAG, "Mot de passe correspond: " + passwordMatch);
+            } else {
+                Log.d(TAG, "Aucun utilisateur trouvé avec cet email");
             }
 
             runOnUiThread(() -> {
